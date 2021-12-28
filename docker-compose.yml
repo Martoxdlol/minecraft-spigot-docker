@@ -1,0 +1,8 @@
+version: '3.8'
+services:
+  mcserver1:
+    build: .
+    container_name: mcserver1
+    volumes:
+      - ./server:/server
+      - ./config:/server

@@ -12,7 +12,12 @@ RUN mkdir /usr/src/build
 RUN cp spigot-*.jar /usr/src/build/spigot.jar
 
 WORKDIR /server
+
 EXPOSE 25565
+# If using bedrock proxy
+EXPOSE 19132
+
 COPY ./scripts/run.sh /scripts/run.sh
+
 
 CMD [ "/scripts/run.sh" ]
