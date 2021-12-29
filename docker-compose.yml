@@ -6,6 +6,7 @@ services:
     ports:
       - "25565:25565"
       - "19132:19132"
+    tty: yes
     volumes:
       - ./server:/server
       - ./config:/config
