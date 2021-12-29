@@ -1,10 +1,7 @@
-FROM openjdk:17
+FROM openjdk:17.0.1-buster
 
 WORKDIR /usr/src/buildtools
 RUN curl -z BuildTools.jar -o BuildTools.jar https://hub.spigotmc.org/jenkins/job/BuildTools/lastSuccessfulBuild/artifact/target/BuildTools.jar
-
-COPY --from=bitnami/git /opt/bitnami/git/bin/git /bin/git
-COPY --from=bitnami/git /opt/bitnami/git/bin/git-upload-pack /bin/git-upload-pack
 
 RUN java -jar BuildTools.jar --rev latest
 
@@ -20,4 +17,4 @@ EXPOSE 19132
 COPY ./scripts/run.sh /scripts/run.sh
 
 
-CMD [ "/scripts/run.sh" ]
+# CMD [ "/scripts/run.sh" ]
