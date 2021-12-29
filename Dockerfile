@@ -18,4 +18,5 @@ COPY ./scripts/run.sh /scripts/run.sh
 
 RUN chmod +x /scripts/run.sh
 
-CMD [ "bash", "-c", "/scripts/run.sh" ]
+ENTRYPOINT [ "bash", "-c", "/scripts/run.sh" ]
+CMD [ "java", "-Xmx10G", "-jar", "spigot.jar" ]
