@@ -8,4 +8,4 @@ services:
       - "19132:19132"
     volumes:
       - ./server:/server
-      - ./config:/server
+      - ./config:/config
