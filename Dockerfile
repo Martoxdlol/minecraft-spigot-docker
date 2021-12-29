@@ -16,5 +16,6 @@ EXPOSE 19132
 
 COPY ./scripts/run.sh /scripts/run.sh
 
-# CMD [ "/scripts/run.sh" ]
+RUN chmod +x /scripts/run.sh
+
 CMD [ "bash", "-c", "/scripts/run.sh" ]
